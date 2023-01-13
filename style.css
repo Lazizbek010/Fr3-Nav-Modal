@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+.nav {
+    background-color: rgba(0, 0, 0, 0.577);
+    padding: 15px 0;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 120px;
+    height: 50px;
+}
+.logo img{
+    width: 120px;
+    height: 50px;
+}
+.list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.list li a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bars{
+    display: none;
+    flex-direction: column;
+    gap: 7px;
+}
+.bars span{
+    width: 35px;
+    height: 4px;
+    background-color: #fff;
+}
+
+.resNav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 100vh;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.16);
+    transform: translateX(-110%);
+    transition: 0.5s ease;
+}
+.showNav{
+    transition: 0.3s ease;
+    transform: translateX(0%);
+
+}
+.resNav__list{
+    padding: 50px;
+}
+.resNav__list li{
+    margin-bottom: 20px;
+    list-style: none;
+}
+.resNav__list li a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.resNav-close{
+    color: #fff;
+    font-size: 45px;
+    text-align: end;
+    padding: 20px;
+}
+
+.bg-modal{
+    background-color: rgba(255, 0, 0, .4);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+}
+.modal{
+    border-radius: 12px;
+    box-shadow: 0 0 10px 10px #999;
+    padding: 40px;
+    text-align: center;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: transform 0.5s ease;
+    z-index: 6;
+    background-color: aqua;
+}
+.modal.showModal{
+    transition: transform 0.5s ease;
+    transform:translate(-50%,-50%) scale(1);
+}
+.modal h1{
+    text-decoration: underline;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.modal p{
+    color: #777;
+    margin-bottom: 20px;
+}
+.close{
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    border: 1px solid red;
+    background: transparent;
+    color: red;
+}
+.open{
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    border: 1px solid red;
+    background: transparent;
+    color: red;
+    margin-top: 40px;
+}
+
+
+
+
+
+
+
+@media (max-width:600px){
+    .list{
+        display: none;
+    }
+    .bars{
+        display: flex;
+    }
+    .modal{
+        width: 95%;
+    }
+}
